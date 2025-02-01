@@ -56,6 +56,18 @@ class ProductController {
         status_id,
       });
 
+      if (!product) {
+        return res.status(500).json({ message: "Failed to create product" });
+      }
+
+      const productExist = await Product.findOne({
+        where: { id_produk },
+      });
+
+      if (id_produk === productExist.id_produk) {
+        return res.status(400).json({ message: "Product already exist" });
+      }
+
       const productWithRelations = await Product.findByPk(id_produk, {
         include: [Category, Status],
       });
