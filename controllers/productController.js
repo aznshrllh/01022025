@@ -46,15 +46,17 @@ class ProductController {
 
   static async createProduct(req, res) {
     try {
-      const { nama_produk, harga, kategori_id, status_id } = req.body;
+      const { id_produk, nama_produk, harga, kategori_id, status_id } =
+        req.body;
       const product = await Product.create({
+        id_produk,
         nama_produk,
         harga,
         kategori_id,
         status_id,
       });
 
-      const productWithRelations = await Product.findByPk(product.id, {
+      const productWithRelations = await Product.findByPk(id_produk, {
         include: [Category, Status],
       });
 
