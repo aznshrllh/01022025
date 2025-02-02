@@ -1,7 +1,7 @@
 const { body, validationResult } = require("express-validator");
 
 const validateProduct = [
-  body("id_produk").notEmpty().withMessage("ID Produk harus diisi"),
+  // body("id_produk").notEmpty().withMessage("ID Produk harus diisi"),
 
   body("nama_produk").notEmpty().withMessage("Nama produk harus diisi"),
 

@@ -1,3 +1,4 @@
+const { Sequelize } = require("sequelize");
 const { Category, Product, Status } = require("../models");
 
 class ProductController {
@@ -46,8 +47,33 @@ class ProductController {
 
   static async createProduct(req, res) {
     try {
-      const { id_produk, nama_produk, harga, kategori_id, status_id } =
-        req.body;
+      const { nama_produk, harga, kategori_id, status_id } = req.body;
+
+      const maxIdResult = await Product.sequelize.query(
+        'SELECT MAX(CAST(id_produk AS INTEGER)) as max_id FROM "Products"',
+        { type: Sequelize.QueryTypes.SELECT }
+      );
+
+      // console.log("Raw maxIdResult:", maxIdResult);
+
+      const maxId = maxIdResult[0].max_id;
+      const nextId = maxId ? parseInt(maxId) + 1 : 1;
+      const id_produk = nextId.toString();
+
+      // console.log("Generated id_produk:", id_produk);
+
+      const productExists = await Product.findOne({
+        where: { nama_produk },
+      });
+
+      if (productExists) {
+        return res.status(400).json({
+          message: "Nama produk sudah ada",
+        });
+      }
+
+      // return null;
+
       const product = await Product.create({
         id_produk,
         nama_produk,
@@ -58,14 +84,6 @@ class ProductController {
 
       if (!product) {
         return res.status(500).json({ message: "Failed to create product" });
-      }
-
-      const productExist = await Product.findOne({
-        where: { id_produk },
-      });
-
-      if (id_produk === productExist.id_produk) {
-        return res.status(400).json({ message: "Product already exist" });
       }
 
       const productWithRelations = await Product.findByPk(id_produk, {
