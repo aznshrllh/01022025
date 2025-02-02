@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../configs/axiosInstance";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Table from "../components/Table";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -46,30 +47,10 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Our Products</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id_produk}
-            className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
-          >
-            <div className="card-body">
-              <h2 className="card-title">{product.nama_produk}</h2>
-              <p className="text-lg font-semibold text-primary">
-                Rp {product.harga.toLocaleString("id-ID")}
-              </p>
-              <div className="card-actions justify-end">
-                <button
-                  onClick={() => handleDetailProduct(product.id_produk)}
-                  className="btn btn-primary"
-                >
-                  Detail
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h1 className="text-3xl font-bold mb-8 text-center">
+        Our Sellable Products
+      </h1>
+      <Table products={products} handleDetailProduct={handleDetailProduct} />
     </div>
   );
 }
