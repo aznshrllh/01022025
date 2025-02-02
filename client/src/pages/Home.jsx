@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "../configs/axiosInstance";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
 import Table from "../components/Table";
 
 export default function Home() {
