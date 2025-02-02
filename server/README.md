@@ -46,10 +46,10 @@ Update `config/config.json`:
 # Install dependencies
 npm install
 
-# Setup database
-npm run db:create
-npm run db:migrate
-npm run db:seed:all
+# Database Setup
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
 ```
 
 ## API Endpoints
@@ -96,6 +96,3 @@ npm run db:seed:all
 ## Available Scripts
 
 - npm run dev - Run server with nodemon
-- npm run db:create - Create database
-- npm run db:migrate - Run migrations
-- npm run db:seed:all - Run seeders
