@@ -18,7 +18,7 @@ export default function Home() {
         url: "/products/sellable",
       });
 
-      await new Promise((resolve) => setTimeout(resolve, 1200));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       console.log(data, "<<<data");
       setProducts(data.products);
