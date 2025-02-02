@@ -18,6 +18,8 @@ export default function Home() {
         url: "/products/sellable",
       });
 
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+
       console.log(data, "<<<data");
       setProducts(data.products);
     } catch (error) {
@@ -42,7 +44,9 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return <span className="loading loading-infinity loading-lg"></span>;
+    <div className="min-h-screen flex items-center justify-center">
+      <span className="loading loading-infinity loading-lg"></span>;
+    </div>;
   }
 
   return (
