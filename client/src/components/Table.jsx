@@ -21,7 +21,7 @@ export default function Table({ products, handleDetailProduct }) {
               <td>
                 <button
                   onClick={() => handleDetailProduct(product.id_produk)}
-                  className="btn btn-primary btn-sm"
+                  className="btn btn-info btn-sm"
                 >
                   Detail
                 </button>
