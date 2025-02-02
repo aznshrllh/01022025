@@ -2,6 +2,27 @@
 
 Simple REST API for managing products with categories and status.
 
+## Tech Stack & Dependencies
+
+### Main Dependencies
+
+| Package           | Version | Description        |
+| ----------------- | ------- | ------------------ |
+| express           | ^4.21.2 | Web framework      |
+| sequelize         | ^6.37.5 | ORM for PostgreSQL |
+| pg                | ^8.13.1 | PostgreSQL client  |
+| cors              | ^2.8.5  | CORS middleware    |
+| axios             | ^1.7.9  | HTTP client        |
+| express-validator | ^7.2.1  | Input validation   |
+
+### Dev Dependencies
+
+| Package       | Version | Description            |
+| ------------- | ------- | ---------------------- |
+| dotenv        | ^16.4.7 | Environment variables  |
+| nodemon       | ^3.1.9  | Development server     |
+| sequelize-cli | ^6.6.2  | Sequelize command line |
+
 ## Setup
 
 ### Prerequisites
