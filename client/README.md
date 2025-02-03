@@ -50,13 +50,6 @@ The project uses Tailwind CSS with DaisyUI for styling. Configuration files are:
 
 Routes are configured in `src/router.jsx` using React Router v6.
 
-## Available Scripts
-
-```bash
-# Run development server
-npm run dev
-```
-
 ## Dependencies
 
 ### Main Dependencies
