@@ -41,6 +41,12 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          id: 7,
+          name: "L MTH AKSESORIS (LK)",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
