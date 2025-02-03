@@ -27,7 +27,7 @@ npm install
 Go to the src/configs/axiosInstance.js
 edit the baseURL, by default it is http://localhost:3000
 
-```json
+```js
 import axios from 'axios';
 
 const instance = axios.create({
