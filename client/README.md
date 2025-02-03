@@ -27,77 +27,11 @@ npm install
 Go to the src/configs/axiosInstance.js
 edit the baseURL, by default it is http://localhost:3000
 
-```json
+```js
 import axios from 'axios';
 
 const instance = axios.create({
   baseURL: 'your server url'
-});
-
-export default instance;
-```
-
-Available Scripts
-
-# Run development server
-
-npm run dev
-
-# Build for production
-
-npm run build
-
-# Preview production build
-
-npm run preview
-
-### Plan:
-
-1. Create client README with:
-   - Project overview
-   - Tech stack
-   - Installation steps
-   - Configuration
-   - Available scripts
-   - Dependencies list
-
-````markdown
-# FastPrint Client Application
-
-A React-based web application for managing products and inventory.
-
-## Tech Stack
-
-- React + Vite
-- TailwindCSS + DaisyUI
-- React Router Dom
-- Axios
-- SweetAlert2
-
-## Prerequisites
-
-- Node.js
-- npm
-
-## Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Create axios config
-mkdir src/configs
-touch src/configs/axiosInstance.js
-```
-````
-
-Add the following to `axiosInstance.js`:
-
-```javascript
-import axios from "axios";
-
-const instance = axios.create({
-  baseURL: "http://localhost:3000",
 });
 
 export default instance;
@@ -115,19 +49,6 @@ The project uses Tailwind CSS with DaisyUI for styling. Configuration files are:
 ### Router Setup
 
 Routes are configured in `src/router.jsx` using React Router v6.
-
-## Available Scripts
-
-```bash
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
 
 ## Dependencies
 
