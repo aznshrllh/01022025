@@ -125,6 +125,9 @@ export default function AddProduct() {
   return (
     <div className="min-h-screen bg-base-200 py-8">
       <div className="max-w-2xl mx-auto">
+        <button onClick={() => navigate(-1)} className="btn btn-ghost mb-4">
+          ← Back
+        </button>
         <div className="card bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="card-title text-2xl font-bold text-center mb-6">
