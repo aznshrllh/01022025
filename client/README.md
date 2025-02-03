@@ -43,14 +43,6 @@ Available Scripts
 
 npm run dev
 
-# Build for production
-
-npm run build
-
-# Preview production build
-
-npm run preview
-
 ### Plan:
 
 1. Create client README with:
@@ -121,12 +113,6 @@ Routes are configured in `src/router.jsx` using React Router v6.
 ```bash
 # Run development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
 ## Dependencies
